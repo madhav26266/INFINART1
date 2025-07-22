@@ -79,6 +79,13 @@ const productSlice = createSlice({
         (p) => p.price >= minPrice && p.price <= maxPrice
       );
 
+      // ✅ Apply category filters
+      if (filterOptions.categories && filterOptions.categories.length > 0) {
+        filtered = filtered.filter((p) =>
+          filterOptions.categories.includes(p.category)
+        );
+      }
+      
       // ✅ Category & subcategory filter
       if (filterOptions.categoryFilter) {
         const formattedCategory = filterOptions.categoryFilter.replace(/-/g, " ");
