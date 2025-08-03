@@ -12,6 +12,7 @@ import ShopPage from '../pages/shoppage'
 import ProductDetails from "./components/Product/Testing/ProductDetails/ProductDetails.jsx";
 import ScrollToTop from './components/ScrollToTop.jsx'; 
 import SellerHandler from '../src/components/SellerPages/Handler.jsx';
+import ShopDetails from './components/shopDetails/shopDetails.jsx';
 
 function App() {
   return (
@@ -30,13 +31,12 @@ function App() {
         <Route path="/sale" element={<Productpage />} />
           {/* <Route path="/sale" element={<SalePage />} /> */}
 
+        <Route path="/shops" element={<ShopPage/>} />
+        <Route path="/shop-products" element={<ShopDetails/>} />
 
         <Route path="/:category" element={<Productpage />} />
         <Route path="/:category/:subcategory" element={<Productpage />} />
      <Route path="/:category/:subcategory/:productName" element={<ProductDetails />} />
-
-
-        <Route path="/shops" element={<ShopPage/>} />
         {/* Add more routes as needed */}
       
       </Routes>
